@@ -1,0 +1,38 @@
+//colors
+$dark-green: #1e4c2f;
+$light-green: #1d9e34;
+$main-black: #0b0f0e;
+$pale-gray: #818b9c;
+
+//mixins
+@mixin tablet {
+  @media only screen and (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin font($fs: null, $weight: null, $line: null) {
+  font-size: $fs;
+  font-weight: $weight;
+  line-height: $line;
+}
+
+@mixin flex($display: null, $align: null, $justify: null, $gap: null) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid($display: null, $align: null, $justify: null, $gap: null) {
+  display: $display;
+  justify-items: $justify;
+  align-content: $align;
+  gap: $gap;
+}

@@ -1,0 +1,38 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.swiper-container {
+  position: relative;
+  width: 100%;
+  .swiper-button-next {
+    color: red;
+    position: absolute;
+    right: 8%;
+    top: 45%;
+    font-size: 30px;
+    z-index: 1;
+    display: none;
+    @include mixin.tablet {
+      display: block;
+      div {
+        @include mixin.flex(flex, center, center, null);
+        border-radius: 50px;
+        background-color: white;
+        width: 42px;
+        height: 42px;
+        .fa-chevron-right {
+          font-size: 20px;
+        }
+      }
+    }
+    @include mixin.desktop {
+        right: 12%;
+        div {
+            width: 52px;
+            height: 52px;
+            .fa-chevron-right {
+              font-size: 24px;
+            }
+          }
+    }
+  }
+}

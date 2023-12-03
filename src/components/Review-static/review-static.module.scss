@@ -1,0 +1,463 @@
+@use "../../assets//helper/mixin.scss" as mixin;
+.reviews {
+  @include mixin.flex(flex, flex-start, center, 20px);
+  flex-direction: column;
+  padding: 15px 0px;
+  .reviews_title {
+    @include mixin.font(16px, 600, 22.4px);
+  }
+  .reviews_general {
+    @include mixin.flex(flex, flex-start, center, 20px);
+    flex-direction: column;
+    border: 1px solid #e4e9ee;
+    border-radius: 12px;
+    width: 100%;
+    padding: 10px;
+    .reviews_general_part1 {
+      @include mixin.flex(flex, center, center, 10px);
+      h1 {
+        @include mixin.font(18px, 600, 25.2px);
+        position: relative;
+        border: 5px solid #e4e9ee;
+        width: 64px;
+        height: 64px;
+        border-radius: 50px;
+        @include mixin.flex(flex, center, center, null);
+        &::before {
+          content: "";
+          width: 64px;
+          height: 64px;
+          border: 5px solid #ffa439;
+          border-radius: 50px;
+          position: absolute;
+          box-sizing: border-box;
+          clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+        }
+      }
+      span {
+        @include mixin.flex(flex, flex-start, center, 3px);
+        flex-direction: column;
+        .stars {
+          @include mixin.flex(flex, center, center, 3px);
+          .star {
+            font-size: 20px;
+            color: #ffa439;
+          }
+        }
+        h2 {
+          @include mixin.font(12px, 500, 19.2px);
+        }
+      }
+    }
+    .reviews_general_part2 {
+      @include mixin.flex(flex, flex-start, center, 5px);
+      flex-direction: column;
+      width: 100%;
+      span {
+        @include mixin.flex(flex, center, space-between, null);
+        width: 100%;
+        h1 {
+          @include mixin.font(12px, 500, 19.2px);
+          width: 24px;
+        }
+        .star {
+          font-size: 16px;
+          color: #ffa439;
+        }
+        div {
+          width: 201px;
+          background-color: #e4e9ee;
+          border-radius: 8px;
+          height: 8px;
+          position: relative;
+          .fullDiv {
+            position: absolute;
+            width: 80%;
+            background-color: #1d9e34;
+            border-radius: 8px;
+            height: 8px;
+          }
+          .fullDivLittle {
+            position: absolute;
+            width: 20%;
+            background-color: #1d9e34;
+            border-radius: 8px;
+            height: 8px;
+          }
+          .fullDivEmpty {
+            position: absolute;
+            width: 20%;
+            background-color: #e4e9ee;
+            border-radius: 8px;
+            height: 8px;
+          }
+        }
+        h2 {
+          @include mixin.font(12px, 500, 19.2px);
+          width: 39px;
+          text-align: end;
+        }
+      }
+    }
+  }
+  .filter_list {
+    @include mixin.flex(flex, flex-start, center, 13px);
+    flex-direction: column;
+    width: 100%;
+    section{
+      .reviewList_title {
+        @include mixin.font(16px, 600, 22.4px);
+      }
+      span {
+        @include mixin.flex(flex, flex-start, space-between, 10px);
+        width: 100%;
+        .reviewList_btns {
+          @include mixin.flex(flex, center, flex-start, 5px);
+          flex-wrap: wrap;
+          button {
+            border: 1px solid #e4e9ee;
+            border-radius: 8px;
+            height: 32px;
+            padding: 0px 10px;
+            background: none;
+            @include mixin.font(12px, 500, 19.2px);
+          }
+          .reviewList_btn_active {
+            border: 1px solid #1d9e34;
+            color: #1d9e34;
+          }
+        }
+        .filterIcn {
+          @include mixin.flex(flex, center, center, null);
+          font-size: 20px;
+          height: 32px;
+          width: 32px;
+          border: 1px solid #e4e9ee;
+          border-radius: 8px;
+        }
+      }
+      .review_boxes {
+        @include mixin.flex(flex, center, center, null);
+        flex-direction: column;
+        width: 100%;
+        .review_box {
+          @include mixin.flex(flex, flex-start, center, 12px);
+          flex-direction: column;
+          width: 100%;
+          border-bottom: 1px solid #e4e9ee;
+          padding: 20px 0px;
+          .stars {
+            @include mixin.flex(flex, center, center, null);
+            .star {
+              font-size: 20px;
+              color: #ffa439;
+            }
+          }
+          .titleAnddate {
+            @include mixin.flex(flex, flex-start, center, null);
+            flex-direction: column;
+            p {
+              @include mixin.font(14px, 600, 19.6px);
+            }
+            h1 {
+              @include mixin.font(12px, 400, 19.2px);
+              color: #818b9c;
+            }
+          }
+          .reviewBox_end {
+            @include mixin.flex(flex, center, space-between, null);
+            width: 100%;
+            span {
+              @include mixin.flex(flex, center, center, null);
+              width: auto;
+              img {
+                height: 24px;
+                width: 24px;
+                border-radius: 50px;
+              }
+              h1 {
+                @include mixin.font(12px, 500, 19.2px);
+              }
+              button {
+                @include mixin.flex(flex, center, center, 5px);
+                height: 32px;
+                border: 1px solid #e4e9ee;
+                border-radius: 8px;
+                background: none;
+                padding: 0px 10px;
+              }
+            }
+          }
+        }
+        .review_box_last {
+          border-bottom: none;
+        }
+        .pagination {
+          @include mixin.flex(flex, center, center, 8px);
+          h1 {
+            @include mixin.flex(flex, center, center, null);
+            @include mixin.font(12px, 500, 19.2px);
+            border-radius: 8px;
+            border: 1px solid #e4e9ee;
+            height: 41px;
+            width: 41px;
+            padding: 0px 10px;
+            color: #818b9c;
+            cursor: pointer;
+          }
+          .angle {
+            color: #1d9e34;
+            font-size: 18px;
+            margin-left: 13px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mixin.tablet {
+    .reviews {
+        padding: 30px 0px;
+        .reviews_title {
+          @include mixin.font(20px, 600, 28px);
+        }
+        .reviews_general {
+          @include mixin.flex(flex, flex-start, space-between, 20px);
+          flex-direction: row;
+          padding: 24px;
+          width: 100%;
+          .reviews_general_part1 {
+            h1 {
+              @include mixin.font(20px, 600, 28px);
+              width: 84px;
+              height: 84px;
+              &::before {
+                content: "";
+                width: 84px;
+                height: 84px;
+              }
+            }
+            span {
+              @include mixin.flex(flex, flex-start, center, 3px);
+              h2 {
+                @include mixin.font(14px, 500, 22.4px);
+              }
+              .stars{
+                .star{
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+          .reviews_general_part2 {
+            @include mixin.flex(flex, flex-start, center, 12px);
+            width: 55%;
+            span {
+              @include mixin.flex(flex, center,flex-start, 4px);
+              width: 100%;
+              h1 {
+                @include mixin.font(14px, 500, 22.4px);
+                width: 24px;
+              }
+              .star {
+                font-size: 18px;
+                margin-right: 20px;
+              }
+              div {
+                width: 100%;
+                margin-right: 20px;
+              }
+              h2 {
+                @include mixin.font(14px, 500, 22.4px);
+                text-align: start;
+                width: 39px;
+              }
+            }
+          }
+        }
+        .filter_list {
+          @include mixin.flex(flex, flex-start, space-between, 13px);
+          flex-direction: row;
+          .filter_boxes {
+            @include mixin.flex(flex, flex-start, center, 25px);
+            flex-direction: column;
+            padding: 0px 15px 20px 15px;
+            border: 1px solid #e4e9ee;
+            border-radius: 12px;
+            width: 40%;
+            .filter_title {
+              @include mixin.font(18px, 600, 25.2px);
+              padding: 15px 0px;
+              border-bottom: 1px solid #e4e9ee;
+              width: 100%;
+            }
+            .filter_box {
+              @include mixin.flex(flex, flex-start, center, 8px);
+              flex-direction: column;
+              width: 100%;
+              border-bottom: 1px solid #e4e9ee;
+              padding-bottom: 25px;
+              .filter_boxTitle_holder {
+                width: 100%;
+                @include mixin.flex(flex, center, space-between, 5px);
+                cursor: pointer;
+                .filter_box_title {
+                  @include mixin.font(16px, 600, 22.4px);
+                }
+              }
+              .filterUl {
+                @include mixin.flex(flex, flex-start, center, 8px);
+                flex-direction: column;
+                width: 100%;
+          
+                .li {
+                  @include mixin.flex(flex, center, flex-start, 8px);
+                  width: 100%;
+                  list-style: none;
+                  .checkbox {
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid #c4c8cc;
+                  }
+                  .star {
+                    font-size: 15px;
+                    color: #ffa439;
+                  }
+                  div {
+                    color: #818b9c;
+                    @include mixin.font(14px, 400, 22.4px);
+                  }
+                }
+              }
+            }
+            .filter_box_last{
+              border-bottom: none;
+              padding-bottom: 0px;
+            }
+          }
+          section{
+            @include mixin.flex(flex, flex-start, center, 20px);
+            flex-direction: column;
+            .reviewList_title {
+              @include mixin.font(20px, 600, 28px);
+            }
+            span {
+              @include mixin.flex(flex, flex-start, space-between, null);
+              .reviewList_btns {
+                button {
+                  height: 44px;
+                  @include mixin.font(14px, 500, 22.4px);
+                }
+              }
+            }
+            .review_boxes {
+              @include mixin.flex(flex, center, center, 2px);
+              .review_box {
+                @include mixin.flex(flex, flex-start, center, 16px);
+                padding: 30px 0px;
+                .stars {
+                  .star {
+                    font-size: 18px;
+                  }
+                }
+                .titleAnddate {
+                  p {
+                    @include mixin.font(18px, 600, 25.2px);
+                  }
+                  h1 {
+                    @include mixin.font(16px, 400, 25.6px);
+                  }
+                }
+                .reviewBox_end {
+                  span {
+                    img {
+                      height: 32px;
+                      width: 32px;
+                    }
+                    h1 {
+                      @include mixin.font(16px, 500, 25.6px);
+                    }
+                    button {
+                      @include mixin.flex(flex, center, center, 7px);
+                      height: 50px;
+                      padding: 0px 12px;
+                    }
+                  }
+                }
+              }
+              .pagination {
+                h1 {
+                  @include mixin.font(14px, 500, 22.4px);
+                  height: 44px;
+                  width: 44px;
+                }
+                .angle {
+                  font-size: 20px;
+                  margin-left: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+}
+
+
+@include mixin.desktop {
+  .reviews {
+      padding: 40px 0px;
+      .reviews_general {
+        .reviews_general_part1 {
+          span {
+            @include mixin.flex(flex, flex-start, center, 3px);
+            h2 {
+              @include mixin.font(16px, 500, 25.6px);
+            }
+          }
+        }
+        .reviews_general_part2 {
+          @include mixin.flex(flex, flex-start, center, 12px);
+          width: 65%;
+          span {
+            h1 {
+              @include mixin.font(16px, 500, 25.6px);
+              width: 25px;
+            }
+            h2 {
+              @include mixin.font(16px, 500, 25.6px);
+            }
+          }
+        }
+      }
+      .filter_list {
+        .filter_boxes {
+          @include mixin.flex(flex, flex-start, center, 25px);
+          width: 30%;
+          .filter_title {
+            @include mixin.font(20px, 600, 28px);
+          }
+          .filter_box {
+            .filterUl {
+              .li {
+                .checkbox {
+                  width: 24px;
+                  height: 24px;
+                }
+                .star {
+                  font-size: 17px;
+                }
+                div {
+                  @include mixin.font(16px, 400, 25.6px);
+                }
+              }
+            }
+          }
+        }
+        section{
+          width: 65%;
+        }
+      }
+    }
+}

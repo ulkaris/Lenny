@@ -1,0 +1,231 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.pd_head_section {
+  width: 100%;
+  @include mixin.flex(flex, flex-start, center, 24px);
+  flex-direction: column;
+  .search_nav {
+    @include mixin.flex(flex, center, center, 10px);
+    h1 {
+      @include mixin.font(12px, 500, 19.2px);
+    }
+    .h1_green {
+      color: #1d9e34;
+    }
+    .angle {
+      font-size: 12px;
+      color: #818b9c;
+    }
+  }
+  .sliderAndDetails {
+    @include mixin.flex(flex, center, center, 24px);
+    flex-direction: column;
+    width: 100%;
+    .sliderHolder {
+      width: 100%;
+    }
+    .details {
+      @include mixin.flex(flex, flex-start, center, 24px);
+      flex-direction: column;
+      .details_head {
+        @include mixin.flex(flex, flex-start, center, 16px);
+        flex-direction: column;
+        border-bottom: 1px solid #e4e9ee;
+        padding-bottom: 24px;
+        span {
+          h1 {
+            @include mixin.font(24px, 600, 33.6px);
+          }
+          .starAndRating {
+            @include mixin.flex(flex, center, flex-start, 8px);
+            .star {
+              color: #ffa439;
+              font-size: 20px;
+            }
+            h1 {
+              @include mixin.font(14px, 400, 22.4px);
+            }
+            h2 {
+              @include mixin.font(14px, 400, 22.4px);
+            }
+          }
+        }
+        .price {
+          color: #1d9e34;
+          @include mixin.font(20px, 600, 28px);
+        }
+        p {
+          color: #818b9c;
+          @include mixin.font(14px, 400, 22.4px);
+          max-height: 100px;
+          overflow-y: auto;
+        }
+      }
+      .details_bottom {
+        @include mixin.flex(flex, flex-start, center, 12px);
+        flex-direction: column;
+        width: 100%;
+        h1 {
+          @include mixin.font(16px, 600, 22.4px);
+        }
+        .typeAndColor_boxes {
+          width: 100%;
+          @include mixin.flex(flex, flex-start, space-between, null);
+          .typeAndColor_box {
+            @include mixin.flex(flex, flex-start, center, 8px);
+            flex-direction: column;
+            width: 47%;
+            h2 {
+              @include mixin.font(14px, 400, 22.4px);
+            }
+            select {
+              outline: none;
+              border: 1px solid #e4e9ee;
+              padding: 11px 3px;
+              border-radius: 8px;
+              width: 100%;
+              text-transform: capitalize;
+            }
+          }
+        }
+        .btns {
+          @include mixin.flex(flex, flex-start, center, 16px);
+          flex-direction: column;
+          width: 100%;
+          margin-top: 20px;
+          .btn_buy{
+            width: 100%;
+            background-color: mixin.$dark-green;
+            color: white;
+            @include mixin.font(14px, 600, 19.6px);
+            padding: 14px 0px;
+          }
+          .btn_add{
+            @include mixin.flex(flex, center, center, 8px);
+            width: 100%;
+            @include mixin.font(14px, 600, 19.6px);
+            padding: 14px 0px;
+            .cart{
+                font-size: 24px;
+                color: mixin.$dark-green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@include mixin.tablet {
+    .pd_head_section {
+        width: 100%;
+        @include mixin.flex(flex, flex-start, center, 32px);
+        .search_nav {
+            @include mixin.flex(flex, center, center, 10px);
+            h1 {
+              @include mixin.font(14px, 500, 22.4px);
+            }
+            .angle {
+              font-size: 12px;
+            }
+          }
+        .sliderAndDetails {
+          @include mixin.flex(flex, flex-start, space-between, 24px);
+          flex-direction: row;
+          .sliderHolder {
+            width: 60%;
+          }
+          .details {
+            @include mixin.flex(flex, center,space-between, null);
+            height: 495px;
+            .details_head {
+                @include mixin.flex(flex, flex-start, space-between, 16px);
+                height: 50%;
+              span {
+                .starAndRating {
+                  .star {
+                    font-size: 24px;
+                  }
+                }
+              }
+            }
+            .details_bottom {
+                @include mixin.flex(flex, flex-start, space-between, 12px);
+                height: 50%;
+              h1 {
+                @include mixin.font(18px, 600, 25.2px);
+              }
+              .btns {
+                flex-direction: row;
+                .btn_buy{
+                  @include mixin.font(16px, 600, 22.4px);
+                  padding: 14px 0px;
+                  width: 50%;
+                }
+                .btn_add{
+                  @include mixin.flex(flex, center, center, 8px);
+                  width: 50%;
+                  @include mixin.font(16px, 600, 22.4px);
+                  padding: 0px 5px;
+                  height: 50px;
+                }
+              }
+            }
+          }
+        }
+      }
+}
+
+@include mixin.desktop {
+    .pd_head_section {
+        .search_nav {
+            h1 {
+              @include mixin.font(16px, 500, 25.6px);
+            }
+          }
+        .sliderAndDetails {
+          .sliderHolder {
+            width: 50%;
+          }
+          .details {
+            @include mixin.flex(flex, center,space-between, null);
+            height: 610px;
+            width: 45%;
+            .details_head{
+                span {
+                    h1 {
+                      @include mixin.font(38px, 600, 53.2px);
+                    }
+                    .starAndRating {
+                      h1 {
+                        @include mixin.font(16px, 400, 25.6px);
+                      }
+                      h2 {
+                        @include mixin.font(16px, 400, 25.6px);
+                      }
+                    }
+                  }
+            }
+            .details_bottom {
+              .btns {
+                .btn_buy{
+                    @include mixin.flex(flex, center, center, 8px);
+                  @include mixin.font(18px, 600, 25.2px);
+                  padding: 24px 0px;
+                  width: 50%;
+                  height: 25px;
+                }
+                .btn_add{
+                  @include mixin.flex(flex, center, center, 8px);
+                  width: 50%;
+                  @include mixin.font(18px, 600, 25.2px);
+                  padding: 24px 0px;
+                  height: 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+}

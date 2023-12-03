@@ -1,0 +1,230 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.cartBox {
+  @include mixin.flex(flex, flex-start, center, 16px);
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #e4e9ee;
+  padding: 24px 0px;
+  .cartBox_start {
+    @include mixin.flex(flex, center, center, 12px);
+    input {
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid #c4c8cc;
+    }
+    .img_holder {
+      @include mixin.flex(flex, center, center, null);
+      background-color: #f6f6f6;
+      border-radius: 8px;
+      width: 56px;
+      height: 56px;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: 80%;
+      }
+    }
+    span {
+      @include mixin.flex(flex, flex-start, center, 2px);
+      flex-direction: column;
+      .h1 {
+        h1 {
+          @include mixin.font(12px, 600, 16.8px);
+        }
+      }
+      h2 {
+        @include mixin.font(10px, 400, 16px);
+        color: #818b9c;
+      }
+      h3 {
+        color: #1d9e34;
+        @include mixin.font(12px, 600, 16.8px);
+      }
+    }
+  }
+  .cartBox_end {
+    @include mixin.flex(flex, center, space-between, null);
+    width: 100%;
+    h1 {
+      @include mixin.font(10px, 400, 16px);
+      color: #818b9c;
+    }
+    .spanBoxEnd {
+      @include mixin.flex(flex, center, center, 12px);
+      .amountBox {
+        @include mixin.flex(flex, center, center, 12px);
+        padding: 0px 10px;
+        border-radius: 8px;
+        border: 1px solid #e4e9ee;
+        height: 28px;
+        .minus {
+          font-size: 14px;
+          color: #c4c8cc;
+          cursor: pointer;
+        }
+        .minus_active {
+          font-size: 14px;
+          color: #1d9e34;
+          cursor: pointer;
+        }
+        .amount {
+          color: #0b0f0e;
+          @include mixin.font(12px, 500, 19px);
+        }
+        .plus {
+          color: #1d9e34;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+      .deleteBtn_holder {
+        @include mixin.flex(flex, center, center, null);
+        border: 1px solid #e4e9ee;
+        border-radius: 8px;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        .deleteBtn {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@include mixin.tablet {
+  .cartBox {
+    @include mixin.flex(flex, center, space-between, 16px);
+    flex-direction: row;
+    .cartBox_start {
+      @include mixin.flex(flex, center, center, 16px);
+      input {
+        width: 24px;
+        height: 24px;
+      }
+      .img_holder {
+        width: 80px;
+        height: 80px;
+      }
+      span {
+        @include mixin.flex(flex, flex-start, center, 4px);
+        .h1 {
+          height: 20px;
+          width: 100%;
+          overflow-x: hidden;
+          white-space: nowrap;
+          h1 {
+            @include mixin.font(14px, 600, 19.6px);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 117px;
+            height: 20px;
+          }
+        }
+        h2 {
+          @include mixin.font(14px, 400, 22.4px);
+        }
+        h3 {
+          @include mixin.font(16px, 600, 22.4px);
+        }
+      }
+    }
+    .cartBox_end {
+      width: auto;
+      .spanBoxEnd {
+        @include mixin.flex(flex, center, center, 12px);
+        .amountBox {
+          @include mixin.flex(flex, center, center, 12px);
+          padding: 0px 12px;
+          height: 32px;
+          .minus {
+            font-size: 16px;
+          }
+          .minus_active {
+            font-size: 16px;
+          }
+          .amount {
+            @include mixin.font(14px, 500, 22.4px);
+          }
+          .plus {
+            font-size: 16px;
+          }
+        }
+        .deleteBtn_holder {
+          width: 32px;
+          height: 32px;
+          .deleteBtn {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mixin.desktop {
+  .cartBox {
+    .cartBox_start {
+      @include mixin.flex(flex, center, flex-start, 24px);
+      .img_holder {
+        width: 100px;
+        height: 100px;
+      }
+      span {
+        .h1 {
+          height: 20px;
+          width: 100%;
+          overflow-x: hidden;
+          white-space: nowrap;
+          h1 {
+            @include mixin.font(20px, 600, 28px);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 117px;
+            height: 20px;
+            @media only screen and (min-width: 1400px) {
+              width: auto;
+            }
+          }
+        }
+        h2 {
+          @include mixin.font(16px, 400, 25.6px);
+        }
+        h3 {
+          @include mixin.font(20px, 600, 28px);
+        }
+      }
+    }
+    .cartBox_end {
+      .spanBoxEnd {
+        @include mixin.flex(flex, center, center, 16px);
+        .amountBox {
+          @include mixin.flex(flex, center, center, 16px);
+          padding: 0px 16px;
+          height: 44px;
+          .minus {
+            font-size: 18px;
+          }
+          .minus_active {
+            font-size: 18px;
+          }
+          .amount {
+            @include mixin.font(16px, 500, 25.6px);
+          }
+          .plus {
+            font-size: 18px;
+          }
+        }
+        .deleteBtn_holder {
+          width: 44px;
+          height: 44px;
+          .deleteBtn {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

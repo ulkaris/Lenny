@@ -1,0 +1,60 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.modal_wrapper {
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 327px;
+  transform: translate(-50%, -51%);
+  .register_modal {
+    @include mixin.flex(flex, center, center, 24px);
+    flex-direction: column;
+    width: 100%;
+    border-radius: 8px;
+    padding: 32px 24px;
+    background-color: white;
+    z-index: 100;
+    img{
+        height: 80px;
+        width: 80px;
+    }
+    h1{
+        @include mixin.font(18px, 600, 25.2px);
+        text-align: center
+    }
+    p{
+        @include mixin.font(14px, 400, 22.4px);
+        color: #818B9C;
+        text-align: center;
+    }
+    .signInBtn{
+        color: white;
+        background-color: mixin.$dark-green;
+        @include mixin.font(14px, 600, 19.6px);
+        padding: 11px 10px;
+        width: 100%;
+    }
+  }
+}
+
+@include mixin.tablet {
+  .modal_wrapper {
+  width: 440px;
+  transform: translate(-50%, -51%);
+    .register_modal {
+      @include mixin.flex(flex, center, center, 32px);
+      //burda qaldi
+    }
+  }
+}
+
+@include mixin.desktop {
+  .modal_wrapper {
+  width: 440px;
+
+    .register_modal {
+      @include mixin.flex(flex, center, center, 32px);
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@use "../../assets//helper/mixin.scss" as mixin;
+
+.catagoryBox {
+  @include mixin.flex(flex, center, center, 5px);
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 1.5px solid #e4e9ee;
+  padding: 24px;
+  max-height: 133.33px;
+  .catagoryImg {
+    width: 32px;
+    height: 32px;
+  }
+  .catagoryTitle{
+    @include mixin.font(14px, 600, 19.6px);
+    text-align: center;
+  }
+  .catagoryAmount{
+    @include mixin.font(12px, 400, 19.2px);
+    color: #818B9C;
+    text-align: center;
+  }
+}
+
+
+@include mixin.tablet {
+  .catagoryBox {
+    @include mixin.flex(flex, center, center, 8px);
+    padding: 21px;
+    .catagoryImg {
+      width: 42px;
+      height: 42px;
+    }
+    .catagoryTitle{
+      @include mixin.font(16px, 600, 22.4px);
+    }
+    .catagoryAmount{
+      @include mixin.font(14px, 400, 22.4px);
+    }
+  }
+}
+
+@include mixin.desktop {
+  .catagoryBox {
+    @include mixin.flex(flex, center, center, 10px);
+    padding: 29px 35px;
+    min-height: 180px;
+    .catagoryImg {
+      width: 52px;
+      height: 52px;
+    }
+    .catagoryTitle{
+      @include mixin.font(20px, 600, 28px);
+    }
+    .catagoryAmount{
+      @include mixin.font(16px, 400, 25.6px);
+    }
+  }
+}

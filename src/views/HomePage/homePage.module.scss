@@ -1,0 +1,333 @@
+@use "../../assets//helper//mixin.scss" as mixin;
+
+.homePage {
+  padding: 0px 0px 50px 0px;
+  position: relative;
+
+  .home_catagories {
+    @include mixin.flex(flex, center, center, 25px);
+    flex-direction: column;
+    margin: 40px 5% 0px 5%;
+    .home_catagories_start {
+      width: 100%;
+      @include mixin.flex(flex, center, space-between, null);
+      .home_catagories_title {
+        @include mixin.font(18px, 600, 25.2px);
+      }
+      .home_catagories_btn {
+        width: 94px;
+        height: 32px;
+      }
+    }
+    .home_catagories_boxes {
+      @include mixin.flex(flex, center, center, 15px);
+      width: 100%;
+      min-width: 100%;
+      height: 126px;
+      overflow-x: auto;
+    }
+  }
+
+  .home_products {
+    @include mixin.flex(flex, center, center, 17px);
+    flex-direction: column;
+    margin: 70px 5% 0px 5%;
+    .home_products_title {
+      @include mixin.font(18px, 600, 25.2px);
+      text-align: center;
+    }
+    .home_products_content {
+      @include mixin.font(14px, 400, 22.4px);
+      text-align: center;
+      color: #818b9c;
+      width: 90%;
+    }
+    .home_products_boxes {
+      @include mixin.grid(grid, center, center, 15px);
+      grid-template-columns: 1fr 1fr;
+      row-gap: 35px;
+      .loading{
+        font-size: 30px;
+      }
+      .link{
+        text-decoration: none;
+      }
+    }
+    .home_products_btn {
+      width: 131px;
+      height: 48px;
+      margin-top: 25px;
+    }
+  }
+
+  .home_ipadAd {
+    @include mixin.flex(flex, flex-start, center, 25px);
+    flex-direction: column;
+    background-color: #fcece1;
+    border-radius: 16px;
+    margin: 80px 5% 0px 5%;
+    padding: 20px;
+    position: static;
+    .ipadImgEmpty {
+      display: none;
+    }
+    img {
+      position: static;
+      width: 157px;
+      height: 176px;
+    }
+    .home_ipadAd_end {
+      @include mixin.flex(flex, flex-start, center, 20px);
+      flex-direction: column;
+      width: auto;
+      .home_ipadAd_title {
+        @include mixin.font(18px, 600, 25.2px);
+      }
+      .home_ipadAd_content {
+        @include mixin.font(14px, 400, 22.4px);
+        color: #818b9c;
+      }
+      .home_ipad_btns {
+        width: 100%;
+        @include mixin.flex(flex, center, flex-start, 20px);
+        .home_ipadAd_btnBuy {
+          width: 133px;
+          height: 48px;
+          background-color: mixin.$dark-green;
+          color: white;
+        }
+        .link{
+          .home_ipadAd_btnView {
+            width: 133px;
+            height: 48px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home_article {
+  @include mixin.flex(flex, center, center, 30px);
+  flex-direction: column;
+  padding: 80px 5% 0px 5%;
+  width: 100%;
+  .home_article_start {
+    width: 100%;
+    @include mixin.flex(flex, center, space-between, null);
+    .home_article_title {
+      @include mixin.font(18px, 600, 25.2px);
+    }
+    .home_article_btn {
+      width: 94px;
+      height: 32px;
+    }
+  }
+  .home_article_boxes {
+    @include mixin.flex(flex, center, center, 20px);
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@include mixin.tablet {
+  .homePage {
+    padding: 0px 0px 90px 0px;
+    width: 100%;
+
+    .home_catagories {
+      margin: 60px 8% 0px 8%;
+      @include mixin.flex(flex, center, center, 25px);
+      .home_catagories_start {
+        .home_catagories_title {
+          @include mixin.font(28px, 600, 39.2px);
+        }
+        .home_catagories_btn {
+          width: 112px;
+          height: 42px;
+        }
+      }
+      .home_catagories_boxes {
+        @include mixin.flex(flex, center, center, 20px);
+        height: 143px;
+      }
+    }
+
+    .home_products {
+      padding: 110px 8% 0px 8%;
+      margin: 0px;
+      .home_products_title {
+        @include mixin.font(28px, 600, 39.2px);
+      }
+      .home_products_content {
+        @include mixin.font(16px, 400, 25.6px);
+      }
+      .justcont {
+        width: 100%;
+        .home_products_boxes {
+          width: 100%;
+          @include mixin.grid(grid, center, space-between, 25px);
+          grid-template-columns: 1fr 1fr 1fr;
+          
+        }
+      }
+      .home_products_btn {
+        width: 180px;
+      }
+    }
+
+    .home_ipadAd {
+      @include mixin.flex(flex, center, center, 25px);
+      flex-direction: row;
+      margin: 130px 8% 0px 8%;
+      padding: 0px 30px;
+      position: relative;
+      .ipadImgEmpty {
+        display: block;
+        width: 300px;
+        height: 340px;
+      }
+      img {
+        width: 322px;
+        height: 362.46px;
+        position: absolute;
+        left: 10px;
+      }
+      .home_ipadAd_end {
+        width: 50%;
+        .home_ipadAd_title {
+          @include mixin.font(28px, 600, 39.2px);
+        }
+        .home_ipadAd_content {
+          @include mixin.font(18px, 400, 28.8px);
+        }
+        .home_ipad_btns {
+          .home_ipadAd_btnBuy {
+            width: 180px;
+          }
+          .link{
+            .home_ipadAd_btnView {
+              width: 180px;
+            }
+          }
+        }
+      }
+    }
+
+    .home_article {
+      padding: 90px 8% 0px 8%;
+      @include mixin.flex(flex, center, center, 60px);
+      .home_article_start {
+        .home_article_title {
+          @include mixin.font(28px, 600, 39.2px);
+        }
+        .home_article_btn {
+          width: 112px;
+          height: 42px;
+        }
+      }
+      .home_article_boxes {
+        width: 100%;
+        @include mixin.flex(flex, flex-start, space-between, null);
+        flex-direction: row;
+      }
+    }
+
+  }
+}
+
+@include mixin.desktop {
+  .homePage {
+    padding: 0px 0px 100px 0px;
+
+    .home_catagories {
+      margin: 70px 12% 0px 12%;
+      @include mixin.flex(flex, center, center, 35px);
+      .home_catagories_start {
+        .home_catagories_title {
+          @include mixin.font(28px, 600, 39.2px);
+        }
+        .home_catagories_btn {
+          height: 45px;
+        }
+      }
+      .home_catagories_boxes {
+        @include mixin.flex(flex, center, space-between, 20px);
+        height: 198px;
+      }
+    }
+
+    .home_products {
+      padding: 110px 12% 0px 12%;
+      .home_products_title {
+        @include mixin.font(38px, 600, 53.2px);
+      }
+      .home_products_content {
+        @include mixin.font(18px, 400, 28.8px);
+      }
+      .justcont {
+        @include mixin.flex(flex, center, center, null);
+        width: 100%;
+        .home_products_boxes {
+          width: auto;
+          // @include mixin.grid(grid, center, center, 25px);
+          // grid-template-columns: 282px 282px 282px;
+          @include mixin.flex(flex, space-between, flex-start, 25px);
+          flex-wrap: wrap;
+        }
+      }
+      .home_products_btn {
+        width: 200px;
+      }
+    }
+
+    .home_ipadAd {
+      @include mixin.flex(flex, center, center, 80px);
+      margin: 130px 12% 0px 12%;
+      .ipadImgEmpty {
+        width: 350px;
+        height: 400px;
+      }
+      img {
+        width: 382px;
+        height: 430px;
+        left: 15%;
+      }
+      .home_ipadAd_end {
+        width: 30%;
+        .home_ipadAd_title {
+          @include mixin.font(38px, 600, 53.2px);
+        }
+        .home_ipad_btns {
+          .home_ipadAd_btnBuy {
+            width: 200px;
+            height: 53px;
+          }
+          .link{
+            .home_ipadAd_btnView {
+              width: 200px;
+              height: 53px;
+            }
+          }
+        }
+      }
+    }
+
+    .home_article {
+      padding: 90px 12% 0px 12%;
+      .home_article_start {
+        .home_article_title {
+          @include mixin.font(38px, 600, 53.2px);
+        }
+        .home_article_btn {
+          height: 45px;
+        }
+      }
+      .home_article_boxes {
+        width: 100%;
+        @include mixin.flex(flex, flex-start, space-between, null);
+        flex-direction: row;
+      }
+    }
+  }
+}

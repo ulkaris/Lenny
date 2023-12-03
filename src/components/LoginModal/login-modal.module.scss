@@ -1,0 +1,153 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.modal_wrapper {
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 327px;
+  transform: translate(-50%, -51%);
+  .register_modal {
+    @include mixin.flex(flex, flex-start, center, 24px);
+    flex-direction: column;
+    width: 100%;
+    border-radius: 8px;
+    padding: 32px 24px;
+    background-color: white;
+    z-index: 100;
+    .title {
+      width: 100%;
+      @include mixin.font(20px, 600, 28px);
+    }
+    form {
+      @include mixin.flex(flex, flex-start, center, 16px);
+      flex-direction: column;
+      width: 100%;
+      .inputBox {
+        @include mixin.flex(flex, flex-start, center, 8px);
+        flex-direction: column;
+        width: 100%;
+        .inputTitle {
+          @include mixin.font(16px, 600, 22.4px);
+        }
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          @include mixin.font(14px, 500, 22.4px);
+          padding: 10px 16px;
+          background-color: #f6f8fa;
+          border-radius: 12px;
+          color: #818b9c;
+        }
+        .errorText{
+          color: rgba(255, 0, 0, 0.879);
+        }
+        .alreadySigned{
+            color: #1D9E34;
+            @include mixin.font(14px, 500, 22.4px);
+            width: 100%;
+            text-align: end;
+        }
+      }
+      .registerBtn {
+        margin-top: 10px;
+        background-color: mixin.$dark-green;
+        color: white;
+        @include mixin.font(14px, 600, 19.6px);
+        padding: 11px 10px;
+        width: 100%;
+      }
+    }
+    .otherMethod_box {
+      @include mixin.flex(flex, center, space-between, 0px);
+      width: 100%;
+      .border {
+        background-color: #e4e9ee;
+        height: 1px;
+        flex: 1;
+      }
+      .otherMethodMain {
+        @include mixin.font(12px, 500, 19.2px);
+        padding: 0px 10px;
+        color: #818b9c;
+      }
+    }
+    .facebook_box {
+      @include mixin.flex(flex, center, center, 10px);
+      width: 100%;
+      border-radius: 8px;
+      padding: 12px 10px;
+      border: 1px solid #e4e9ee;
+      .facebook {
+        font-size: 16px;
+        color: #337fff;
+      }
+      h1 {
+        @include mixin.font(14px, 600, 22.4px);
+      }
+    }
+  }
+}
+
+@include mixin.tablet {
+  .modal_wrapper {
+  width: 440px;
+  transform: translate(-50%, -51%);
+    .register_modal {
+      @include mixin.flex(flex, flex-start, center, 32px);
+      .title {
+        @include mixin.font(24px, 600, 33.6px);
+      }
+      form {
+        .registerBtn {
+          @include mixin.font(16px, 600, 22.4px);
+        }
+      }
+      .otherMethod_box {
+        .otherMethodMain {
+          @include mixin.font(14px, 500, 22.4px);
+        }
+      }
+      .facebook_box {
+        .facebook {
+          font-size: 18px;
+        }
+        h1 {
+          @include mixin.font(16px, 600, 25.6px);
+        }
+      }
+    }
+  }
+}
+
+@include mixin.desktop {
+  .modal_wrapper {
+  width: 440px;
+
+    .register_modal {
+      @include mixin.flex(flex, flex-start, center, 32px);
+      .title {
+        @include mixin.font(24px, 600, 33.6px);
+      }
+      form {
+        .registerBtn {
+          @include mixin.font(16px, 600, 22.4px);
+        }
+      }
+      .otherMethod_box {
+        .otherMethodMain {
+          @include mixin.font(14px, 500, 22.4px);
+        }
+      }
+      .facebook_box {
+        .facebook {
+          font-size: 18px;
+        }
+        h1 {
+          @include mixin.font(16px, 600, 25.6px);
+        }
+      }
+    }
+  }
+}

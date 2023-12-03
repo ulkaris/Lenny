@@ -1,0 +1,17 @@
+@use '../../assets//helper//mixin.scss' as mixin;
+
+.btn{
+    border-radius: 8px;
+    border: none;
+    color: mixin.$dark-green;
+    border: 1px solid mixin.$dark-green;
+    background: none;
+    cursor: pointer;
+    @include mixin.font(14px, 600, 19.6px);
+    @include mixin.tablet {
+        @include mixin.font(16px, 600, 22.4px);
+    }
+    @include mixin.desktop {
+        @include mixin.font(18px, 600, 25.2px);
+    }
+}

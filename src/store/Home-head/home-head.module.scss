@@ -1,0 +1,198 @@
+@use '../../assets//helper//mixin.scss';
+
+.home_head{
+    @include mixin.flex(flex, center, space-between, 60px);
+    flex-direction: column;
+    padding-top: 50px;
+    background: linear-gradient(180deg, #F7F7F7 55.95%, rgba(247, 247, 247, 0) 58.1%);
+    .home_head_start{
+        @include mixin.flex(flex, flex-start, center, 15px);
+        flex-direction: column;
+        padding: 0px 5% 0px 5%;
+        .home_head_title{
+            @include mixin.font(28px, 600, 39.2px);
+        }
+        .home_head_content{
+            @include mixin.font(14px, 400, 22.4px);
+            color: #818B9C;
+        }
+        .home_head_btns{
+            @include mixin.flex(flex, flex-start, flex-start, 9px);
+            flex-direction: column;
+            width: 100%;
+            .home_head_buy{
+                background-color: mixin.$dark-green;
+                color: white;
+                width: 100%;
+                height: 48px;
+            }
+            .home_head_view{
+                color: mixin.$dark-green;
+                width: 100%;
+                height: 48px;
+            }
+        }
+    }
+    .home_head_end{
+        .head_homeImg_parent{
+            width: 100%;
+            position: relative;
+            .home_head_img{
+                width: 100%;
+                max-width: 100%;
+                
+            }
+            .home_head_productBoxParent{
+                @include mixin.flex(flex, center, center, 2px);
+                flex-direction: column;
+                position: absolute;
+                bottom: 50px;
+                left: 15%;
+                width: 128px;
+                // height: 244px;
+                .pointerIcons{
+                    @include mixin.flex(flex, center, center, 2px);
+                    flex-direction: column;
+                    .pointerBig_saver{
+                        width: 32px;
+                        height: 32px;
+                        background: #FFFFFF40;
+                        border-radius: 50px;
+                        @include mixin.flex(flex, center, center, null);
+                        .productbox_pointerBig{
+                            width: 12px;
+                            height: 12px;
+                            background-color: white;
+                            border-radius: 50px;
+                        }
+                    }
+                    .productbox_pointerSmall{
+                        width: 2px;
+                        height: 3px;
+                        border-radius: 50px;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mixin.tablet {
+    .home_head{
+        @include mixin.flex(flex, center, space-between, 0px);
+        background: #F7F7F7;
+        flex-direction: row;
+        padding: 30px 8% 30px 8%;
+        .home_head_start{
+            padding: 0px 40px 0px 0px;
+            .home_head_title{
+                @include mixin.font(34px, 600, 40.8px);
+            }
+            .home_head_content{
+                @include mixin.font(16px, 400, 25.6px);
+            }
+            .home_head_btns{
+                @include mixin.flex(flex, flex-start, flex-start, 14px);
+                flex-direction: row;
+                .home_head_buy{
+                    width: 180px;
+                    height: 50px;
+                }
+                .home_head_view{
+                    width: 180px;
+                    height: 50px;
+                }
+            }
+        }
+        .home_head_end{
+            .head_homeImg_parent{
+                position: relative;
+                .home_head_img{
+                    width: 100%;
+                    max-width: 100%;
+                }
+                .home_head_productBoxParent{
+                    @include mixin.flex(flex, center, center, 2px);
+                    flex-direction: column;
+                    position: absolute;
+                    top: 45px;
+                    left: 15%;
+                    .pointerIcons{
+                        @include mixin.flex(flex, center, center, 2px);
+                        flex-direction: column;
+                        .pointerBig_saver{
+                            width: 32px;
+                            height: 32px;
+                            background: #FFFFFF40;
+                            border-radius: 50px;
+                            @include mixin.flex(flex, center, center, null);
+                            .productbox_pointerBig{
+                                width: 12px;
+                                height: 12px;
+                                background-color: white;
+                                border-radius: 50px;
+                            }
+                        }
+                        .productbox_pointerSmall{
+                            width: 2px;
+                            height: 3px;
+                            border-radius: 50px;
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include mixin.desktop {
+    .home_head{
+        @include mixin.flex(flex, center, space-between, 0px);
+        background: #F7F7F7;
+        flex-direction: row;
+        padding: 0px 12% 0px 12%;
+        .home_head_start{
+            @include mixin.flex(flex, flex-start, center, 35px);
+            padding: 0px 0px 50px 0px;
+            .home_head_title{
+                @include mixin.font(58px, 600, 69.6px);
+                width: 90%;
+            }
+            .home_head_content{
+                @include mixin.font(18px, 400, 28.8px);
+                width: 60%;
+            }
+            .home_head_btns{
+                .home_head_buy{
+                    width: 200px;
+                    height: 53px;
+                }
+                .home_head_view{
+                    width: 200px;
+                    height: 53px;
+                }
+            }
+        }
+        .home_head_end{
+            .head_homeImg_parent{
+                position: relative;
+                .home_head_img{
+                    width: 100%;
+                    max-width: 100%;
+                    
+                }
+                .home_head_productBoxParent{
+                    @include mixin.flex(flex, center, center, 2px);
+                    flex-direction: column;
+                    position: absolute;
+                    top: 5px;
+                    left: 25%;
+                    width: 150px;
+                }
+            }
+        }
+    }
+}

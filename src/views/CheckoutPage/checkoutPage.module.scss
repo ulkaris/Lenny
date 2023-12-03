@@ -1,0 +1,410 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.checkoutPage{
+  @include mixin.flex(flex, flex-start, center, 32px);
+  flex-direction: column;
+  padding: 32px 5% 24px 5%;
+  //   background: linear-gradient(
+  //       to bottom,
+  //       #F7F7F7 30%,
+  //       #F7F7F7 50%,
+  //       white 50%,
+  //       white 70%,
+  //  );
+  .sc_head {
+    @include mixin.flex(flex, flex-start, center, 24px);
+    flex-direction: column;
+    width: 100%;
+    .titleBox {
+      @include mixin.flex(flex, flex-start, center, 4px);
+      flex-direction: column;
+      h1 {
+        @include mixin.font(18px, 600, 25.2px);
+      }
+      h2 {
+        @include mixin.font(12px, 400, 19.2px);
+        color: #818b9c;
+      }
+    }
+    span {
+      @include mixin.flex(flex, center, center, null);
+      flex-direction: column;
+      width: 100%;
+      select {
+        @include mixin.font(14px, 500, 22.4px);
+        width: 100%;
+        outline: none;
+        border: 1px solid #e4e9ee;
+        padding: 11px 16px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .cart_main {
+    width: 100%;
+    .containerAddress_wrapper {
+      width: 100%;
+      @include mixin.flex(flex, flex-start, center, 24px);
+      flex-direction: column;
+      .addressBox {
+        @include mixin.flex(flex, flex-start, center, 20px);
+        flex-direction: column;
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid #e4e9ee;
+        padding: 16px;
+        .addressBox_start {
+          @include mixin.flex(flex, flex-start, center, 24px);
+          flex-direction: column;
+          .addressBox_title {
+            @include mixin.font(16px, 600, 22.4px);
+          }
+          span {
+            @include mixin.flex(flex, center, center, 16px);
+            .locationIcon {
+              width: 24px;
+              height: 24px;
+            }
+            .addressDatas {
+              @include mixin.flex(flex, flex-start, center, 7px);
+              flex-direction: column;
+              .mainAddressBox {
+                @include mixin.flex(flex, center, center, 12px);
+                h1 {
+                  @include mixin.font(14px, 600, 19.6px);
+                }
+                h2 {
+                  @include mixin.font(12px, 500, 15.6px);
+                  padding: 5px 8px;
+                  color: #1d9e34;
+                  background-color: #1d9e341a;
+                  border-radius: 4px;
+                }
+              }
+              .addressNumber {
+                @include mixin.font(12px, 400, 19.2px);
+                color: #818b9c;
+              }
+              .addressMainTitle {
+                @include mixin.font(12px, 400, 19.2px);
+                color: #818b9c;
+              }
+            }
+          }
+        }
+        button {
+          background: none;
+          border: 1px solid #e4e9ee;
+          border-radius: 8px;
+          padding: 14px 16px;
+          width: 100%;
+          @include mixin.font(14px, 600, 19.6px);
+        }
+      }
+      .container {
+        @include mixin.flex(flex, flex-start, center, 24px);
+        flex-direction: column;
+        width: 100%;
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid #e4e9ee;
+        .container_title {
+          @include mixin.font(16px, 600, 22.4px);
+        }
+        .shippingBox {
+          width: 100%;
+          padding: 12px 21px 12px 12px;
+          border: 1px solid #e4e9ee;
+          border-radius: 12px;
+          @include mixin.flex(flex, center, space-between, null);
+          .shippingBox_start {
+            @include mixin.flex(flex, center, center, 12px);
+            img {
+              width: 63px;
+              height: 32px;
+            }
+            span {
+              @include mixin.flex(flex, flex-start, center, null);
+              flex-direction: column;
+              h1 {
+                @include mixin.font(12px, 600, 16.8px);
+              }
+              h2 {
+                @include mixin.font(10px, 400, 16px);
+                color: #818b9c;
+              }
+            }
+          }
+          .shippingBox_end {
+            @include mixin.flex(flex, center, center, 8px);
+            h1 {
+              @include mixin.font(12px, 600, 16.8px);
+            }
+            .arrowDown {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .emptyBox {
+    @include mixin.flex(flex, center, space-between, 10px);
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e4e9ee;
+    border-radius: 8px;
+    h3 {
+      @include mixin.font(18px, 500, 20px);
+    }
+    .shopping {
+      padding: 5px;
+      color: white;
+      background: mixin.$dark-green;
+    }
+  }
+  .related {
+    @include mixin.flex(flex, center, center, 30px);
+    flex-direction: column;
+    padding: 15px 0px;
+    width: 100%;
+    padding-bottom: 52px;
+    border-bottom: 1px solid #e4e9ee;
+    .related_start {
+      width: 100%;
+      @include mixin.flex(flex, center, space-between, null);
+      .related_title {
+        @include mixin.font(18px, 600, 25.2px);
+      }
+      .related_btn {
+        width: 94px;
+        height: 32px;
+      }
+    }
+    .related_boxes {
+      @include mixin.grid(grid, center, center, 15px);
+      grid-template-columns: 1fr 1fr;
+      .link {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@include mixin.tablet {
+  .checkoutPage {
+    @include mixin.flex(flex, flex-start, center, 53px);
+    padding: 60px 8% 80px 8%;
+    //   background: linear-gradient(
+    //       to bottom,
+    //       #F7F7F7 30%,
+    //       #F7F7F7 50%,
+    //       white 50%,
+    //       white 70%,
+    //  );
+    .sc_head {
+      @include mixin.flex(flex, center, space-between, null);
+      flex-direction: row;
+      .titleBox {
+        @include mixin.flex(flex, flex-start, center, 4px);
+        h1 {
+          @include mixin.font(20px, 600, 28px);
+        }
+        h2 {
+          @include mixin.font(14px, 400, 22.4px);
+        }
+      }
+      span {
+        @include mixin.flex(flex, center, center, 10px);
+        flex-direction: row;
+        width: auto;
+        .sort {
+          @include mixin.font(14px, 500, 22.4px);
+          color: #818b9c;
+        }
+        select {
+          width: auto;
+        }
+      }
+    }
+
+    .cart_main {
+      @include mixin.flex(flex, flex-start, space-between, 15px);
+      .containerAddress_wrapper {
+        width: 55%;
+        @include mixin.flex(flex, flex-start, center, 32px);
+        .addressBox {
+          @include mixin.flex(flex, center, space-between, null);
+          flex-direction: row;
+          padding: 32px 24px;
+          .addressBox_start {
+            @include mixin.flex(flex, flex-start, center, 26px);
+            span {
+              @include mixin.flex(flex, center, center, 10px);
+              .addressDatas {
+                .mainAddressBox {
+                  h1 {
+                    @include mixin.font(16px, 600, 22.4px);
+                  }
+                }
+              }
+            }
+          }
+          button {
+            padding: 12px 14px;
+            width: auto;
+          }
+        }
+        .container {
+          padding: 24px;
+          .shippingBox {
+            padding: 16px;
+            .shippingBox_start {
+              @include mixin.flex(flex, center, center, 16px);
+              img {
+                width: 84.6px;
+                height: 44px;
+              }
+              span {
+                h1 {
+                  @include mixin.font(14px, 600, 19.6px);
+                }
+                h2 {
+                  @include mixin.font(12px, 400, 19.2px);
+                }
+              }
+            }
+            .shippingBox_end {
+              @include mixin.flex(flex, center, center, 24px);
+              h1 {
+                @include mixin.font(14px, 600, 19.6px);
+              }
+              .arrowDown {
+                font-size: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .emptyBox {
+      padding: 10px;
+      h3 {
+        @include mixin.font(20px, 500, 22px);
+      }
+      .shopping {
+        padding: 10px;
+      }
+    }
+    .related {
+      padding: 0px 0px;
+      border-bottom: none;
+      padding-bottom: 0px;
+      @include mixin.flex(flex, center, center, 40px);
+      .related_start {
+        .related_title {
+          @include mixin.font(28px, 600, 39.2px);
+        }
+        .related_btn {
+          width: 112px;
+          height: 42px;
+        }
+      }
+      .related_boxes {
+        @include mixin.grid(grid, center, center, 30px);
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+}
+
+@include mixin.desktop {
+  .checkoutPage {
+    @include mixin.flex(flex, flex-start, center, 53px);
+    padding: 60px 12% 120px 12%;
+    .sc_head {
+      .titleBox {
+        h1 {
+          @include mixin.font(24px, 600, 33.6px);
+        }
+        h2 {
+          @include mixin.font(16px, 400, 25.6px);
+        }
+      }
+      span {
+        @include mixin.flex(flex, center, center, 13px);
+        .sort {
+          @include mixin.font(16px, 400, 25.6px);
+        }
+      }
+    }
+
+    .cart_main {
+      @include mixin.flex(flex, flex-start, space-between, 15px);
+      .containerAddress_wrapper {
+        width: 60%;
+        .addressBox {
+          .addressBox_start {
+            @include mixin.flex(flex, flex-start, center, 24px);
+            span {
+              @include mixin.flex(flex, center, center, 19px);
+              .addressDatas {
+                .mainAddressBox {
+                  h1 {
+                    @include mixin.font(20px, 600, 28px);
+                  }
+                }
+                .addressNumber {
+                  @include mixin.font(16px, 400, 25.6px);
+                }
+                .addressMainTitle {
+                  @include mixin.font(16px, 400, 25.6px);
+                }
+              }
+            }
+          }
+        }
+        .container {
+          .shippingBox {
+            padding: 24px;
+            .shippingBox_start {
+              img {
+                width: 100px;
+                height: 52px;
+              }
+              span {
+                h1 {
+                  @include mixin.font(20px, 600, 28px);
+                }
+                h2 {
+                  @include mixin.font(16px, 400, 25.6px);
+                }
+              }
+            }
+            .shippingBox_end {
+              h1 {
+                @include mixin.font(20px, 600, 28px);
+              }
+            }
+          }
+        }
+      }
+    }
+    .related {
+      padding: 40px 0px;
+      .related_start {
+        .related_btn {
+          width: 112px;
+          height: 38px;
+          cursor: pointer;
+        }
+      }
+      .related_boxes {
+        @include mixin.flex(flex, space-between, space-between, 30px);
+        flex-wrap: wrap;
+        width: 100%;
+      }
+    }
+  }
+}

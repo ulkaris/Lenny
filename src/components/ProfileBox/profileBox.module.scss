@@ -1,0 +1,104 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.profileBox {
+  @include mixin.flex(flex, flex-start, center, null);
+  flex-direction: column;
+  padding: 0px 24px;
+  position: absolute;
+  background-color: white;
+  width: 90%;
+  top: 60px;
+  right: 0px;
+  z-index: 5;
+  .start {
+    @include mixin.flex(flex, flex-start, center, 16px);
+    padding: 24px 0px;
+    border-bottom: 1px solid #e4e9ee;
+    .profileImg{
+      @include mixin.flex(flex, center, center, null);
+      background-color: mixin.$dark-green;
+      color: white;
+      text-transform: capitalize;
+      font-size: 30px;
+      font-weight: 500;
+      width: 58px;
+      height: 58px;
+      border-radius: 50px;
+    }
+    img {
+      width: 58px;
+      height: 58px;
+      border-radius: 50px;
+    }
+    .nameBox {
+      @include mixin.flex(flex, flex-start, center, 4px);
+      flex-direction: column;
+      h1 {
+        @include mixin.font(20px, 600, 28px);
+        text-transform: capitalize;
+      }
+      h2 {
+        @include mixin.font(16px, 400, 25.6px);
+        color: #818b9c;
+      }
+    }
+  }
+  .box {
+    @include mixin.flex(flex, flex-start, center, 12px);
+    flex-direction: column;
+    padding: 24px 0px;
+    width: 100%;
+    border-bottom: 1px solid #e4e9ee;
+    img{
+        width: 24px;
+        height: 24px;
+    }
+    .title {
+      @include mixin.font(14px, 500, 22.4px);
+      color: #818b9c;
+    }
+    .row {
+      @include mixin.flex(flex, center, space-between, null);
+      width: 100%;
+      .row_start {
+        @include mixin.flex(flex, center, center, 12px);
+        img{
+            width: 24px;
+            height: 24px;
+        }
+        h3 {
+          @include mixin.font(16px, 400, 25.6px);
+          color: #818B9C;
+        }
+        h4{
+            color: #E04124;
+            @include mixin.font(16px, 500, 25.6px);
+        }
+      }
+    }
+  }
+  .logoutBox{
+    @include mixin.flex(flex, center, flex-start, 12px);
+    flex-direction: row;
+  }
+}
+
+
+@include mixin.tablet {
+    .profileBox {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        width: 410px;
+        top: 70px;
+        right: 8%;
+        border-radius: 8px;
+        border: 1px solid #E4E9EE;
+      }
+}
+
+@include mixin.desktop {
+    .profileBox {
+        width: 410px;
+        right: 12%;
+        top: 90px;
+      }
+}

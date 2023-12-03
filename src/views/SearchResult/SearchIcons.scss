@@ -1,0 +1,6 @@
+@use '../../assets/helper/mixin.scss';
+
+.fa-plus{
+    color: mixin.$dark-green;
+    background-color: white;
+}

@@ -1,0 +1,307 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.notFound{
+  color: #818B9C;
+  padding: 10px 5%;
+  @include mixin.tablet {
+    padding: 10px 8%;
+  }
+  @include mixin.desktop {
+    padding: 10px 12%;
+  }
+}
+.searchResult {
+  @include mixin.flex(flex, center, center, 40px);
+  flex-direction: column;
+  margin: 40px 5% 40px 5%;
+  .search_start {
+    @include mixin.flex(flex, flex-start, center, 20px);
+    flex-direction: column;
+    width: 100%;
+    .search_nav {
+      @include mixin.flex(flex, center, center, 10px);
+      h1 {
+        @include mixin.font(12px, 500, 19.2px);
+      }
+      .h1_green {
+        color: #1d9e34;
+      }
+      .angle {
+        font-size: 12px;
+        color: #818b9c;
+      }
+    }
+    .showBoxAndIcons{
+      @include mixin.flex(flex, flex-start, center, 20px);
+      flex-direction: column;
+      .search_showBox {
+        @include mixin.flex(flex, flex-start, center, null);
+        flex-direction: column;
+        .search_showing {
+          @include mixin.font(18px, 600, 25.2px);
+        }
+        .search_showNumber {
+          color: #818b9c;
+          @include mixin.font(12px, 400, 19.2px);
+        }
+      }
+      .search_sortAndIcons {
+        width: 100%;
+        @include mixin.flex(flex, center, space-between, 10px);
+        .search_sortAndIcons_part1 {
+          @include mixin.flex(flex, center, center, 20px);
+          select {
+            height: 32px;
+            border: 1px solid #e4e9ee;
+            @include mixin.font(12px, 500, 19.2px);
+            outline: none;
+            cursor: pointer;
+            border-radius: 8px;
+            padding: 0px 10px;
+          }
+        }
+      }
+    }
+    .iconsBigSmall {
+      @include mixin.flex(flex, center, center, 20px);
+      .filterIcn {
+        @include mixin.flex(flex, center, center, null);
+        font-size: 20px;
+        width: 32px;
+        height: 32px;
+        border: 1px solid #e4e9ee;
+        border-radius: 8px;
+      }
+      .border {
+        width: 1px;
+        height: 24px;
+        background-color: #e4e9ee;
+      }
+      .viewSmall {
+        @include mixin.flex(flex, center, center, null);
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        background-color: mixin.$dark-green;
+        border-radius: 8px;
+        .pencere {
+          @include mixin.flex(flex, center, center, null);
+          width: 32px;
+          height: 32px;
+          .pencereIcon {
+            @include mixin.grid(grid, center, center, 2px);
+            grid-template-columns: 1fr 1fr;
+            .pencerePart {
+              background-color: white;
+              width: 7px;
+              height: 7px;
+              border-radius: 1px;
+            }
+          }
+        }
+      }
+      .viewLarge {
+        @include mixin.flex(flex, center, center, null);
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        border: 1px solid #e4e9ee;
+        border-radius: 8px;
+      }
+    }
+  }
+  .filterAndBoxes {
+    @include mixin.flex(flex, center, center, 15px);
+    width: 100%;
+    position: relative;
+    .x{
+      @include mixin.flex(flex, center, center, null);
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: red;
+      width: 10%;
+      height: 35px;
+      color: white;
+      border-radius: 5px;
+      z-index: 100;
+    }
+    .classFilter{
+      width: 90%;
+      height: 100%;
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      z-index: 99;
+      background-color: white;
+      justify-content: flex-start;
+      overflow-y: auto;
+    }
+    .paginationAndBoxes{
+      @include mixin.flex(flex, center, center, 32px);
+      flex-direction: column;
+      .searchResult_boxes {
+        width: 100%;
+        @include mixin.grid(grid, center, center, 15px);
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+        .link{
+          text-decoration: none
+        }
+      }
+      .pagination {
+        @include mixin.flex(flex, center, center, 8px);
+        h1 {
+          @include mixin.flex(flex, center, center, null);
+          @include mixin.font(12px, 500, 19.2px);
+          border-radius: 8px;
+          border: 1px solid #e4e9ee;
+          height: 41px;
+          width: 41px;
+          padding: 0px 10px;
+          color: #818b9c;
+          cursor: pointer;
+        }
+        .angle {
+          color: #1d9e34;
+          font-size: 18px;
+          margin-left: 13px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@include mixin.tablet {
+  .searchResult {
+    @include mixin.flex(flex, center, center, 70px);
+    flex-direction: column;
+    margin: 70px 8% 70px 8%;
+    .search_start {
+      @include mixin.flex(flex, flex-start, center, 30px);
+      flex-direction: column;
+      width: 100%;
+      .search_nav {
+        @include mixin.flex(flex, center, center, 10px);
+        h1 {
+          @include mixin.font(14px, 500, 22.4px);
+        }
+        .angle {
+          font-size: 12px;
+        }
+      }
+      .showBoxAndIcons{
+        @include mixin.flex(flex, flex-start, space-between, 20px);
+        width: 100%;
+        flex-direction: row;
+        .search_showBox {
+          .search_showing {
+            @include mixin.font(20px, 600, 28px);
+          }
+          .search_showNumber {
+            @include mixin.font(14px, 400, 22.4px);
+          }
+        }
+        .search_sortAndIcons {
+          width: auto;
+          @include mixin.flex(flex, center, space-between, 10px);
+          .search_sortAndIcons_part1 {
+            @include mixin.flex(flex, center, center, 20px);
+            .sort{
+              @include mixin.font(14px, 400, 22.4px);
+              color: #818B9C;
+            }
+            select {
+              height: 44px;
+              @include mixin.font(14px, 500, 22.4px);
+            }
+          }
+        }
+      }
+      .iconsBigSmall {
+        @include mixin.flex(flex, center, center, 10px);
+        .viewSmall {
+          width: 44px;
+          height: 44px;
+          .pencere {
+            width: 44px;
+            height: 44px;
+            .pencereIcon {
+              .pencerePart {
+                width: 9px;
+                height: 9px;
+              }
+            }
+          }
+        }
+        .viewLarge {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    }
+    .filterAndBoxes {
+      @include mixin.flex(flex, flex-start, space-between, 15px);
+      .paginationAndBoxes{
+        .searchResult_boxes {
+          width: auto;
+          @include mixin.grid(grid, center, center, 20px);
+          grid-template-columns: 1fr 1fr;
+          row-gap: 25px;
+        }
+        .pagination {
+          h1 {
+            @include mixin.font(14px, 500, 22.4px);
+            height: 44px;
+            width: 44px;
+          }
+          .angle {
+            font-size: 20px;
+            margin-left: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mixin.desktop {
+  .searchResult {
+    @include mixin.flex(flex, center, center, 70px);
+    margin: 70px 12% 70px 12%;
+    .search_start {
+      .search_nav {
+        h1 {
+          @include mixin.font(16px, 500, 25.6px);
+        }
+      }
+      .showBoxAndIcons{
+        .search_showBox {
+          .search_showing {
+            @include mixin.font(24px, 600, 33.6px);
+          }
+          .search_showNumber {
+            @include mixin.font(16px, 400, 25.6px);
+          }
+        }
+        .search_sortAndIcons {
+          .search_sortAndIcons_part1 {
+            .sort{
+              @include mixin.font(16px, 400, 25.6px);
+            }
+          }
+        }
+      }
+    }
+    .filterAndBoxes {
+      .paginationAndBoxes{
+        .searchResult_boxes {
+          @include mixin.grid(grid, center, center, 20px);
+          grid-template-columns: 1fr 1fr 1fr;
+          row-gap: 25px;
+        }
+      }
+    }
+  }
+}

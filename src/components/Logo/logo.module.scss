@@ -1,0 +1,56 @@
+@use "../../assets/helper//mixin.scss" as mixin;
+
+.logoSaver {
+  @include mixin.flex(flex, center, center, 8px);
+  cursor: pointer;
+  .logoImg {
+    @include mixin.flex(flex, center, center, null);
+    width: 31.54px;
+    height: 31.54px;
+    border-radius: 10px;
+    background-color: mixin.$dark-green;
+    position: relative;
+    @include mixin.tablet {
+      width: 32.65px;
+      height: 32.65px;
+    }
+    @include mixin.desktop {
+      width: 39.08px;
+      height: 39.08px;
+    }
+    .logoBody {
+      width: 17.74px;
+      height: 15.77px;
+      @include mixin.tablet {
+        width: 18.37px;
+        height: 16.33px;
+      }
+      @include mixin.desktop {
+        width: 21.98px;
+        height: 19.54px;
+      }
+    }
+    .logoLine {
+      position: absolute;
+      width: 7.88px;
+      height: 4px;
+      @include mixin.tablet {
+        width: 8.16px;
+        height: 4.14px;
+      }
+      @include mixin.desktop {
+        width: 9.77px;
+        height: 4.95px;
+      }
+    }
+  }
+  .lenny {
+    @include mixin.font(23.65px, 600, 27.6px);
+    @include mixin.tablet {
+      @include mixin.font(24.49px, 600, 28.57px);
+    }
+    @include mixin.desktop {
+      @include mixin.font(29.31px, 600, 34.19px);
+    }
+  }
+}

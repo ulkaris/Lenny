@@ -1,0 +1,135 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.ProductBox {
+  @include mixin.flex(flex, center, center, 0px);
+  flex-direction: column;
+  width: 128px;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  .boxPart1 {
+    @include mixin.flex(flex, center, center, null);
+    position: relative;
+    background-color: #f6f6f6;
+    width: 100%;
+    height: 128px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    .heart {
+      @include mixin.flex(flex, center, center, null);
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      border-radius: 50px;
+      background-color: white;
+      font-size: 14px;
+    }
+    .boxImg {
+      @include mixin.flex(flex, center, center, null);
+      width: 100%;
+      height: 100%;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+  .boxPart2 {
+    @include mixin.flex(flex, flex-start, center, 4px);
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    .nameAndPrice {
+      @include mixin.flex(flex, center, space-between, null);
+      width: 100%;
+      @include mixin.font(12px, 600, 16.8px);
+      .h1 {
+        height: 17px;
+        width: 60%;
+        overflow-x: hidden;
+        white-space: nowrap;
+        h1 {
+          @include mixin.font(12px, 600, 16.8px);
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+      .price {
+        color: mixin.$light-green;
+      }
+    }
+    .place {
+      @include mixin.font(9px, 400, 14.4px);
+      color: #818b9c;
+    }
+    .boxEnd {
+      @include mixin.flex(flex, center, center, 4px);
+      .star {
+        color: #ffa439;
+        font-size: 15px;
+      }
+      .ratingNumber {
+        @include mixin.font(9px, 500, 14.4px);
+      }
+      .soldAmount {
+        @include mixin.font(9px, 500, 14.4px);
+        margin-left: 14px;
+      }
+    }
+  }
+}
+
+//tablet and desktop
+@include mixin.tablet {
+  .ProductBox {
+    width: 150px;
+    @include mixin.flex(flex, center, center, 0px);
+    .boxPart1 {
+      width: 150px;
+      height: 144px;
+      .heart {
+        width: 24px;
+        height: 24px;
+      }
+      .boxImg {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    .boxPart2 {
+      .nameAndPrice {
+        @include mixin.font(14px, 600, 19.6px);
+        .h1 {
+          height: 20px;
+          width: 68%;
+          h1 {
+            @include mixin.font(14px, 600, 19.6px);
+          }
+        }
+      }
+      .place {
+        @include mixin.font(10px, 400, 16px);
+      }
+      .boxEnd {
+        @include mixin.flex(flex, center, center, 6px);
+        .star {
+          font-size: 16px;
+        }
+        .ratingNumber {
+          @include mixin.font(10px, 500, 16px);
+        }
+        .soldAmount {
+            @include mixin.font(10px, 500, 16px);
+        }
+      }
+    }
+  }
+}

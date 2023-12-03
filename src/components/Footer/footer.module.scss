@@ -1,0 +1,94 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+footer {
+  @include mixin.flex(flex, center, center, null);
+  flex-direction: column;
+  background-color: #f7f7f7;
+  padding: 35px 5%;
+  @include mixin.font(14px, 400, 22.4px);
+  .footerPart1 {
+    @include mixin.flex(flex, center, center, 40px);
+    flex-direction: column;
+    width: auto;
+    .footerLogoSaver {
+      @include mixin.flex(flex, flex-start, center, 20px);
+      flex-direction: column;
+    }
+    .footUl {
+      @include mixin.flex(flex, flex-start, flex-start, 20px);
+      flex-wrap: wrap;
+      width: auto;
+      ul {
+        list-style: none;
+        width: 45%;
+        @include mixin.flex(flex, center, center, 10px);
+        flex-direction: column;
+        .footerUlH1 {
+          width: 100%;
+          text-align: start;
+          @include mixin.font(16px, 600, 22.4px);
+        }
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.footerPart2 {
+  background-color: #f1f1f1;
+  padding: 15px 2%;
+  @include mixin.flex(flex, center, center, 10px);
+  flex-direction: column;
+  @include mixin.font(14px, 400, 22.4px);
+  .copyright {
+    text-align: center;
+  }
+  .termsAndPrivacy {
+    @include mixin.flex(flex, center, center, 20px);
+  }
+}
+
+@include mixin.tablet {
+  footer {
+    padding: 70px 8%;
+    .footerPart1 {
+      @include mixin.flex(flex, flex-start, space-between, 40px);
+      flex-direction: row;
+      width: 100%;
+      .footerLogoSaver {
+        width: 25%;
+      }
+      .footUl {
+        @include mixin.flex(flex, flex-start, flex-start, 20px);
+        flex-wrap: nowrap;
+      }
+    }
+  }
+  .footerPart2 {
+    @include mixin.flex(flex, center, space-between, 10px);
+    flex-direction: row;
+    padding: 15px 8%;
+  }
+}
+
+@include mixin.desktop {
+  footer {
+    @include mixin.font(16px, 400, 25.6px);
+    padding: 70px 12%;
+    .footerPart1 {
+      .footUl {
+        width: 60%;
+        ul {
+          .footerUlH1 {
+            @include mixin.font(20px, 600, 28px);
+          }
+        }
+      }
+    }
+  }
+  .footerPart2 {
+    @include mixin.font(16px, 400, 25.6px);
+    padding: 15px 12%;
+  }
+}

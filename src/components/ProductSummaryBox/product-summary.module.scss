@@ -1,0 +1,159 @@
+@use "../../assets/helper/mixin.scss" as mixin;
+
+.container {
+  @include mixin.flex(flex, center, center, 0px);
+  width: 100%;
+  flex-direction: column;
+  .head {
+    @include mixin.flex(flex, flex-start, center, 24px);
+    flex-direction: column;
+    width: 100%;
+    padding: 24px 0px;
+    border-bottom: 1px solid #e4e9ee;
+    .title {
+      @include mixin.font(16px, 600, 22.4px);
+    }
+    .selectedProducts {
+      @include mixin.font(14px, 400, 22.4px);
+    }
+    .selectedProducts_container {
+      @include mixin.flex(flex, flex-start, center, 12px);
+      flex-direction: column;
+      width: 100%;
+      .selectedProducts_box {
+        @include mixin.flex(flex, center, space-between, 0px);
+        width: 100%;
+        h1 {
+          @include mixin.font(14px, 400, 22.4px);
+        }
+        h2 {
+          @include mixin.font(14px, 400, 22.4px);
+        }
+      }
+    }
+  }
+  .mainBox {
+    @include mixin.flex(flex, center, center, 12px);
+    flex-direction: column;
+    width: 100%;
+    padding: 24px 0px;
+    border-bottom: 1px solid #e4e9ee;
+    .priceBox {
+      @include mixin.flex(flex, center, space-between, 0px);
+      width: 100%;
+      h1 {
+        @include mixin.font(14px, 400, 22.4px);
+        color: #818b9c;
+      }
+    }
+  }
+  .end {
+    @include mixin.flex(flex, center, center, 24px);
+    flex-direction: column;
+    width: 100%;
+    padding: 24px 0px;
+    .totalPriceBox {
+      @include mixin.flex(flex, center, space-between, null);
+      width: 100%;
+    }
+    .promoBox {
+      @include mixin.flex(flex, center, space-between, null);
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #e4e9ee;
+      padding: 11px 12px;
+      .promoBox_start {
+        @include mixin.flex(flex, center, flex-start, 12px);
+        img {
+          width: 20px;
+          height: 20px;
+        }
+        .promoApplied {
+          @include mixin.flex(flex, flex-start, center, 2px);
+          flex-direction: column;
+          h1 {
+            @include mixin.font(14px, 600, 19.6px);
+          }
+          h2 {
+            @include mixin.font(12px, 400, 19.2px);
+            color: #818b9c;
+          }
+        }
+      }
+      .angle_right {
+        font-size: 15px;
+      }
+    }
+    .link {
+      width: 100%;
+      text-decoration: none;
+      .checkout {
+        width: 100%;
+        color: white;
+        background-color: mixin.$dark-green;
+        padding: 14px 10px;
+      }
+    }
+  }
+}
+
+@include mixin.tablet {
+  .container {
+    width: 40%;
+    border: 1px solid #e4e9ee;
+    padding: 24px;
+    border-radius: 12px;
+  }
+}
+
+@include mixin.desktop {
+  .container {
+    width: 35%;
+    .head {
+      .title {
+        @include mixin.font(20px, 600, 28px);
+      }
+      .selectedProducts {
+        @include mixin.font(16px, 400, 25.6px);
+      }
+      .selectedProducts_container {
+        .selectedProducts_box {
+          h1 {
+            @include mixin.font(16px, 400, 25.6px);
+          }
+          h2 {
+            @include mixin.font(16px, 400, 25.6px);
+          }
+        }
+      }
+    }
+    .mainBox {
+      @include mixin.flex(flex, center, center, 8px);
+      .priceBox {
+        h1 {
+          @include mixin.font(16px, 400, 25.6px);
+        }
+      }
+    }
+    .end {
+      .promoBox {
+        padding: 19px 16px;
+        .promoBox_start {
+          @include mixin.flex(flex, center, flex-start, 16px);
+          img {
+            width: 24px;
+            height: 24px;
+          }
+          .promoApplied {
+            h1 {
+              @include mixin.font(16px, 600, 22.4px);
+            }
+            h2 {
+              @include mixin.font(16px, 400, 25.6px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,201 @@
+@use '../../assets/helper/mixin.scss' as mixin;
+
+.shoppingCart{
+    @include mixin.flex(flex, flex-start, center, 32px);
+    flex-direction: column;
+    padding: 32px 5% 24px 5%;
+  //   background: linear-gradient(
+  //       to bottom,
+  //       #F7F7F7 30%,
+  //       #F7F7F7 50%,
+  //       white 50%,
+  //       white 70%,
+  //  );
+   .sc_head{
+    @include mixin.flex(flex, flex-start, center, 24px);
+    flex-direction: column;
+    width: 100%;
+    .titleBox{
+        @include mixin.flex(flex, flex-start, center, 4px);
+        flex-direction: column;
+        h1{
+            @include mixin.font(18px, 600, 25.2px);
+        }
+        h2{
+            @include mixin.font(12px, 400, 19.2px);
+            color: #818B9C;
+        }
+    }
+    span{
+        @include mixin.flex(flex, center, center, null);
+        flex-direction: column;
+        width: 100%;
+        select{
+            @include mixin.font(14px, 500, 22.4px);
+            width: 100%;
+            outline: none;
+            border: 1px solid #E4E9EE;
+            padding: 11px 16px;
+            border-radius: 8px;
+        }
+    }
+   }
+
+   .cart_main{
+    width: 100%;
+   }
+   .emptyBox{
+    @include mixin.flex(flex, center, space-between, 10px);
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E4E9EE;
+    border-radius: 8px;
+    h3{
+      @include mixin.font(18px, 500, 20px);
+    }
+    .shopping{
+      padding: 5px;
+      color: white;
+      background: mixin.$dark-green;
+    }
+   }
+   .related {
+    @include mixin.flex(flex, center, center, 30px);
+    flex-direction: column;
+    padding: 15px 0px;
+    width: 100%;
+    padding-bottom: 52px;
+    border-bottom: 1px solid #E4E9EE;
+    .related_start {
+      width: 100%;
+      @include mixin.flex(flex, center, space-between, null);
+      .related_title {
+        @include mixin.font(18px, 600, 25.2px);
+      }
+      .related_btn {
+        width: 94px;
+        height: 32px;
+      }
+    }
+    .related_boxes {
+      @include mixin.grid(grid, center, center, 15px);
+      grid-template-columns: 1fr 1fr;
+      .link{
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@include mixin.tablet{
+  .shoppingCart{
+    @include mixin.flex(flex, flex-start, center, 53px);
+    padding: 60px 8% 80px 8%;
+  //   background: linear-gradient(
+  //       to bottom,
+  //       #F7F7F7 30%,
+  //       #F7F7F7 50%,
+  //       white 50%,
+  //       white 70%,
+  //  );
+   .sc_head{
+    @include mixin.flex(flex, center, space-between, null);
+    flex-direction: row;
+    .titleBox{
+        @include mixin.flex(flex, flex-start, center, 4px);
+        h1{
+            @include mixin.font(20px, 600, 28px);
+        }
+        h2{
+            @include mixin.font(14px, 400, 22.4px);
+        }
+    }
+    span{
+        @include mixin.flex(flex, center, center, 10px);
+        flex-direction: row;
+        width: auto;
+        .sort{
+          @include mixin.font(14px, 500, 22.4px);
+          color: #818B9C;
+        }
+        select{
+            width: auto;
+        }
+    }
+   }
+
+   .cart_main{
+    @include mixin.flex(flex, flex-start, space-between, 15px);
+   }
+   .emptyBox{
+    padding: 10px;
+    h3{
+      @include mixin.font(20px, 500, 22px);
+    }
+    .shopping{
+      padding: 10px;
+    }
+   }
+   .related {
+    padding: 0px 0px;
+    border-bottom: none;
+    padding-bottom: 0px;
+    @include mixin.flex(flex, center, center, 40px);
+    .related_start {
+      .related_title {
+        @include mixin.font(28px, 600, 39.2px);
+      }
+      .related_btn {
+        width: 112px;
+        height: 42px;
+      }
+    }
+    .related_boxes {
+      @include mixin.grid(grid, center, center, 30px);
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+}
+
+@include mixin.desktop{
+  .shoppingCart{
+    @include mixin.flex(flex, flex-start, center, 53px);
+    padding: 60px 12% 120px 12%;
+   .sc_head{
+    .titleBox{
+        h1{
+            @include mixin.font(24px, 600, 33.6px);
+        }
+        h2{
+            @include mixin.font(16px, 400, 25.6px);
+        }
+    }
+    span{
+        @include mixin.flex(flex, center, center, 13px);
+        .sort{
+          @include mixin.font(16px, 400, 25.6px);
+        }
+    }
+   }
+
+   .cart_main{
+    @include mixin.flex(flex, flex-start, space-between, 15px);
+   }
+   .related {
+    padding: 40px 0px;
+    .related_start {
+      .related_btn {
+        width: 112px;
+        height: 38px;
+        cursor: pointer;
+      }
+    }
+    .related_boxes {
+      @include mixin.flex(flex, space-between, space-between, 30px);
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  }
+}
+}

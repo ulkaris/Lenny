@@ -1,0 +1,10 @@
+@use '../../assets/helper/mixin.scss' as mixin;
+
+.CategoriesSlider{
+    width: 100%;
+    .swiper{
+       padding: 0px 20px;
+        width: 100%;
+        @include mixin.flex(flex, center, center, 16px);
+    }
+}
